@@ -5,6 +5,11 @@ public class SomeBusinessImpl {
 	// This is a common pattern in dependency injection, where external dependencies are provided to a class rather than the class creating those dependencies itself.
 	private DataService dataService;
 	
+	public SomeBusinessImpl(DataService dataService) {
+		super();
+		this.dataService = dataService;
+	}
+
 	// Find and return the greatest (maximum) value from a dataset retrieved through the DataService.
 	public int findTheGreatestFromAllData() {
 		
@@ -28,3 +33,4 @@ public class SomeBusinessImpl {
 interface DataService {
 	int[] retrieveAllData();
 }
+
